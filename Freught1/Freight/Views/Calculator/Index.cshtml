@@ -1,6 +1,27 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Caculator";
+}
+
+@section sidebar{
+    <div class="nav-side-menu">
+        <div class="brand">Dash board</div>
+        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+        <div class="menu-list">
+
+            <ul id="menu-content" class="menu-content collapse out">
+                <li data-toggle="collapse" data-target="#products" class="collapsed active">
+                    <a href="/Calculator/Index"><i class="fa fa-dashboard fa-lg"></i> Calculator </a>
+                </li>
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                    <a href="/UploadRate/Index"><i class="fa fa-car fa-lg"></i> Upload rate</span></a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
 }
 
 <section class="container">
@@ -66,12 +87,12 @@
 
                 </select>
             </div>
-            <div class="col-xs-6 col-md-4" style="margin-top:15px;">
+            <div class="col-xs-6 col-md-4" style="margin-top:27px">
                 @*<select class="custom-select" id="weightSelect">
                         <option selected>Weight</option>
                     </select>*@
                 <label for="exampleInputEmail1">Weight</label>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" style="width: 282px">
                     <input type="text" id="weightSelect" placeholder="Weight" class="form-control" aria-label="Weight">
                     <div class="input-group-append">
                         <span class="input-group-text">Kg</span>
@@ -97,7 +118,7 @@
                         <option selected>Weight</option>
                     </select>*@
                 <label for="exampleInputEmail1">Length</label>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" style="width: 282px">
 
                     <input type="text" id="weightSelect" placeholder="Length" class="form-control" aria-label="Weight">
                     <div class="input-group-append">
@@ -111,7 +132,7 @@
                         <option selected>Weight</option>
                     </select>*@
                 <label for="exampleInputEmail1">Width</label>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" style="width: 282px">
                     <input type="text" id="weightSelect" placeholder="Width" class="form-control" aria-label="Weight">
                     <div class="input-group-append">
                         <span class="input-group-text">CM</span>
@@ -123,7 +144,7 @@
                         <option selected>Weight</option>
                     </select>*@
                 <label for="exampleInputEmail1">Height</label>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" style="width: 282px">
 
                     <input type="text" id="weightSelect" placeholder="Height" class="form-control" aria-label="Weight">
                     <div class="input-group-append">
@@ -172,7 +193,7 @@
             <button type="button" class="btn btn-primary" id="searchButton" style="margin-top:15px;">Search</button>
         </div>
     </div>
-    <div>
+    <div style="margin-top:50px">
         <h3>
             Corporate Rate
         </h3>
@@ -245,8 +266,7 @@
 
             var packagingValue = $(this).val();
             var weightElement = $("#weightSelect");
-            if (packagingValue == '1' || packagingValue == '5')
-            {
+            if (packagingValue == '1' || packagingValue == '5') {
                 $('#heightGroup').attr('hidden', true);
                 $('#widthGroup').attr('hidden', true);
                 $('#lengthGroup').attr('hidden', true);
@@ -285,12 +305,12 @@
             var serviceValue = $("#servicesSelect").val()
             var packagingSelect = $("#packagingSelect").val()
             var weightSelect = $("#weightSelect").val()
-            var priorityEnvelope = { "Carrier": "Fedex", "Service": "Priority", "Packaging": "Envelope", "Weight": "0-2.5", "Surcharge":"10%","Workingdays": "2-4", "Cost": 1000 }
+            var priorityEnvelope = { "Carrier": "Fedex", "Service": "Priority", "Packaging": "Envelope", "Weight": "0-2.5", "Surcharge": "10%", "Workingdays": "2-4", "Cost": 1000 }
             var priorityPak = { "Carrier": "Fedex", "Service": "Priority", "Packaging": "Pak", "Weight": "0.5-2.5", "Surcharge": "11.2%", "Workingdays": "2-4", "Cost": 2000 }
             var priorityPackage = { "Carrier": "Fedex", "Service": "Priority", "Packaging": "Package", "Weight": "0.5-99,999", "Surcharge": "10%", "Workingdays": "2-4", "Cost": 3000 }
             var economyEnvelope = { "Carrier": "Fedex", "Service": "Economy", "Packaging": "Envelope", "Weight": "0-2.5", "Surcharge": "10%", "Workingdays": "3-6", "Cost": 4000 }
             var economyPak = { "Carrier": "Fedex", "Service": "Economy", "Packaging": "Pak", "Weight": "0.5-2.5", "Surcharge": "10%", "Workingdays": "3-6", "Cost": 5000 }
-            var economyPackage = { "Carrier": "Fedex", "Service": "Economy", "Packaging": "Package", "Weight": "0.5-99,999", "Surcharge": "10%","Workingdays": "3-6", "Cost": 6000 }
+            var economyPackage = { "Carrier": "Fedex", "Service": "Economy", "Packaging": "Package", "Weight": "0.5-99,999", "Surcharge": "10%", "Workingdays": "3-6", "Cost": 6000 }
             var priorityFreightNIL = { "Carrier": "Fedex", "Service": "Priority Freight", "Packaging": "NIL", "Weight": "68-99,999", "Surcharge": "10%", "Workingdays": "2-4", "Cost": 7000 }
             var economyFreightEnvelope = { "Carrier": "Fedex", "Service": "Economy Freight", "Packaging": "NIL", "Weight": "68.5-99,999", "Surcharge": "10%", "Workingdays": "2-4", "Cost": 8000 }
 
@@ -326,7 +346,7 @@
                         economyPackage,
                         priorityFreightNIL,
                         economyFreightEnvelope
-                        )
+                    )
                 }
                 if (serviceValue == '1') {
                     if (packagingSelect == '0') {
@@ -397,7 +417,7 @@
                         .append($('<td>').append(data[i].Weight))
                         .append($('<td>').append(data[i].Surcharge))
                         .append($('<td>').append(data[i].Workingdays))
-                        .append($('<td>').append(string, " SGD" ))
+                        .append($('<td>').append(string, " SGD"))
                         //.append($('<td>').append([data[i].Cost * parseInt(weightSelect))
                         .appendTo('table tbody');
                 }

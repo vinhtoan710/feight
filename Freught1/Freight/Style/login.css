@@ -1,6 +1,8 @@
 ﻿
 /* BASIC */
 
+
+
 html {
     background-color: #56baed;
 }
@@ -9,6 +11,7 @@ body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
 }
+
 a.submit {
     color: white;
     height: 36px;
@@ -22,14 +25,13 @@ a.submit {
     border-radius: 0.25rem;
     padding: 6px;
 }
+
 a {
-    
     color: initial;
     border: solid 1px #007bff;
-   display: inline-block;
+    display: inline-block;
     text-decoration: none;
     font-weight: 400;
- 
     width: 100px;
     height: 40px;
 }
@@ -69,6 +71,7 @@ h2 {
     padding: 0px;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    margin-right:250px;
     text-align: center;
 }
 
@@ -303,14 +306,17 @@ input[type=text] {
 #icon {
     width: 60%;
 }
+
 .v-text-field.v-text-field--enclosed {
     margin: 0;
     padding: 0;
 }
+
 .v-application .error--text {
     color: #ff5252 !important;
     caret-color: #ff5252 !important;
 }
+
 .v-input {
     align-items: flex-start;
     display: flex;
@@ -320,10 +326,12 @@ input[type=text] {
     max-width: 100%;
     text-align: left;
 }
+
 .v-text-field--outlined {
     margin-bottom: 16px;
     transition: border .3s cubic-bezier(.25,.8,.5,1);
 }
+
 .v-text-field--outlined, .v-text-field--solo {
     border-radius: 4px;
 }

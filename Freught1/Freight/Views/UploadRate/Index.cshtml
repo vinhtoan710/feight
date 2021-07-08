@@ -1,0 +1,37 @@
+﻿@section sidebar{
+    <div class="nav-side-menu">
+        <div class="brand">Dash board</div>
+        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+        <div class="menu-list">
+
+            <ul id="menu-content" class="menu-content collapse out">
+                <li data-toggle="collapse" data-target="#products" class="collapsed active">
+                    <a href="/Calculator/Index"><i class="fa fa-dashboard fa-lg"></i> Calculator </a>
+                </li>
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                    <a href="/UploadRate/Index"><i class="fa fa-car fa-lg"></i> Upload rate</span></a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+}
+
+<input type="file" name="file" id="file" />
+<br>
+<input type="submit" value="Upload Image" id="upload" />
+<script>
+    $("#upload").click(function () {
+        console.log("hello")
+        var file = $("#file").val();
+        console.log("file:", file)
+        if (file != "")
+            alert("File import successful")
+        else {
+            alert("You have not imported the file ")
+        }
+    })
+</script>
+

@@ -14,6 +14,13 @@ namespace Freught1
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               name: "Upload rate",
+               url: "uploadrate",
+               defaults: new { controller = "UploadRate", action = "Index", id = UrlParameter.Optional },
+           namespaces: new[] { "Freught1.Controllers" }
+           );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
