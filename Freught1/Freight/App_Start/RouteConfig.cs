@@ -18,6 +18,17 @@ namespace Freught1
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+           // routes.MapRoute(
+           //    name: "Default",
+           //    url: "{controller}/{action}/{id}",
+           //    defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
+           //);
+            routes.MapRoute(
+                name: "Calculator",
+                url: "calculator",
+                defaults: new { controller = "Calculator", action = "Index", id = UrlParameter.Optional },
+            namespaces: new[] { "Freught1.Controllers" }
+            );
         }
     }
 }
