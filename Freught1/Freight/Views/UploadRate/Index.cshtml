@@ -1,4 +1,9 @@
-﻿@section sidebar{
+﻿@section header{
+    <div class="row" style="background-color:#232f3e;height:70px;margin-top:-50px">
+        <a class="btn-danger btn-lg" style="margin-left:1300px;margin-bottom:80px;margin-top:20px" href="/Home/Index">Log out</a>
+    </div>
+}
+@section sidebar{
     <div class="nav-side-menu">
         <div class="brand">Dash board</div>
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -6,11 +11,11 @@
         <div class="menu-list">
 
             <ul id="menu-content" class="menu-content collapse out">
-                <li data-toggle="collapse" data-target="#products" class="collapsed active">
+                <li data-toggle="collapse" data-target="#products" class="collapsed ">
                     <a href="/Calculator/Index"><i class="fa fa-dashboard fa-lg"></i> Calculator </a>
                 </li>
 
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <li data-toggle="collapse" data-target="#new" class="collapsed active">
                     <a href="/UploadRate/Index"><i class="fa fa-car fa-lg"></i> Upload rate</span></a>
                 </li>
             </ul>
@@ -54,7 +59,7 @@
         <br>
         @*<input type="submit" value="Upload Image" id="upload" />*@
         <div>
-            <button type="button" class="btn btn-primary" id="upload" style="width: 93px; height: 35px; font-size: 15px;">Submit</button>
+            <button type="button" class="btn btn-primary btn-lg" id="upload" >Submit</button>
         </div>
     </div>
 </div>
