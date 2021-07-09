@@ -1,3 +1,4 @@
+
 ﻿/*sidebar*/
 
 .nav-side-menu {
@@ -163,6 +164,7 @@
 body {
     margin: 0px;
     padding: 0px;
+    font-size:1.5em;
 }
 
 .nav-side-menu ul .sub-menu ul .sub-line li.active,

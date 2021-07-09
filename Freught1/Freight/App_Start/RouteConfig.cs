@@ -36,6 +36,12 @@ namespace Freught1
                 defaults: new { controller = "Calculator", action = "Index", id = UrlParameter.Optional },
             namespaces: new[] { "Freught1.Controllers" }
             );
+            routes.MapRoute(
+               name: "UploadRate",
+               url: "uploadRate",
+               defaults: new { controller = "UploadRate", action = "Index", id = UrlParameter.Optional },
+           namespaces: new[] { "Freught1.Controllers" }
+           );
         }
     }
 }

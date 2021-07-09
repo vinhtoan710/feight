@@ -13,24 +13,147 @@
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
                     <a href="/UploadRate/Index"><i class="fa fa-car fa-lg"></i> Upload rate</span></a>
                 </li>
-
             </ul>
         </div>
     </div>
 }
 
-<input type="file" name="file" id="file" />
-<br>
-<input type="submit" value="Upload Image" id="upload" />
+<div style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem">
+    <div class="row">
+        <div class="col-xs-6 col-md-4" style="margin-top:27px">
+            @*<select class="custom-select" id="weightSelect">
+                    <option selected>Weight</option>
+                </select>*@
+            @*<label for="exampleInputEmail1">Weight</label>
+                    <div class="input-group mb-3" style="width: 282px">
+                        <input type="text" id="weightSelect" placeholder="Weight" class="form-control" aria-label="Weight">
+                        <div class="input-group-append">
+                            <span class="input-group-text">Kg</span>
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+        <table class="table" id="example">
+            @*<thead>
+                    <tr>
+                        <th scope="col">Package</th>
+                        <th scope="col">Argentina</th>
+                        <th scope="col">Australia</th>
+                        <th scope="col">Austria</th>
+                        <th scope="col">Belgium</th>
+                        <th scope="col">Bolivia</th>
+                        <th scope="col">Brazil</th>
+                        <th scope="col">Canada</th>
+                        <th scope="col">Chile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>*@
+        </table>
+        <input type="file" name="file" id="file" />
+        <br>
+        @*<input type="submit" value="Upload Image" id="upload" />*@
+        <div>
+            <button type="button" class="btn btn-primary" id="upload" style="width: 93px; height: 35px; font-size: 15px;">Submit</button>
+        </div>
+    </div>
+</div>
 <script>
     $("#upload").click(function () {
         console.log("hello")
         var file = $("#file").val();
         console.log("file:", file)
+        $('<tr id="tr-id">')
+
         if (file != "")
-            alert("File import successful")
+            alert("Import file sucessful")
+        //for (i = 1; i < 15; i++) {
+        //    //var cost = data[i].Cost * parseFloat(weightSelect);
+        //    var cost = i * 1.5 + 20;
+        //    var Australia = Number(cost).toLocaleString();
+        //    var Argentina = Number(i * 1.7 + 20).toLocaleString()
+        //    var Austria = Number(i * 1.9 + 20).toLocaleString()
+        //    var Belgium = Number(i * 2.1 + 20).toLocaleString()
+        //    var Bolivia = Number(i * 2.3 + 20).toLocaleString()
+        //    var Brazil = Number(i * 2.1 + 20).toLocaleString()
+        //    var Canada = Number(i * 2 + 20).toLocaleString()
+        //    var Chile = Number(i * 1.9 + 20).toLocaleString()
+        //    var package = Number(i).toLocaleString();
+        //    console.log(cost)
+        //    $('<tr id="tr-id">')
+        //        .append($('<td>').append(package))
+        //        .append($('<td>').append(Argentina))
+        //        .append($('<td>').append(Australia))
+        //        .append($('<td>').append(Austria))
+        //        .append($('<td>').append(Belgium))
+        //        .append($('<td>').append(Bolivia))
+        //        .append($('<td>').append(Brazil))
+        //        .append($('<td>').append(Canada))
+        //        .append($('<td>').append(Chile))
+        //        .appendTo('table');
+        //}
         else {
             alert("You have not imported the file ")
+        }
+    })
+
+
+    $("#weightSelect").change(function () {
+        console.log("sadsadaf")
+        var source = $("#weightSelect").val();
+        console.log(source)
+        var contentToRemove = document.querySelectorAll("#tr-id");
+        $(contentToRemove).remove();
+        if (source == "") {
+            for (i = 1; i < 15; i++) {
+                //var cost = data[i].Cost * parseFloat(weightSelect);
+                var cost = i * 1.5 + 20;
+                var Australia = Number(cost).toLocaleString();
+                var Argentina = Number(i * 1.7 + 20).toLocaleString()
+                var Austria = Number(i * 1.9 + 20).toLocaleString()
+                var Belgium = Number(i * 2.1 + 20).toLocaleString()
+                var Bolivia = Number(i * 2.3 + 20).toLocaleString()
+                var Brazil = Number(i * 2.1 + 20).toLocaleString()
+                var Canada = Number(i * 2 + 20).toLocaleString()
+                var Chile = Number(i * 1.9 + 20).toLocaleString()
+                var package = Number(i).toLocaleString();
+                console.log(cost)
+                $('<tr id="tr-id">')
+                    .append($('<td>').append(package))
+                    .append($('<td>').append(Argentina))
+                    .append($('<td>').append(Australia))
+                    .append($('<td>').append(Austria))
+                    .append($('<td>').append(Belgium))
+                    .append($('<td>').append(Bolivia))
+                    .append($('<td>').append(Brazil))
+                    .append($('<td>').append(Canada))
+                    .append($('<td>').append(Chile))
+                    .appendTo('table tbody');
+            }
+        }
+        else {
+            var cost = source * 1.5 + 20;
+            var Australia = Number(cost).toLocaleString();
+            var Argentina = Number(source * 1.7 + 20).toLocaleString()
+            var Austria = Number(source * 1.9 + 20).toLocaleString()
+            var Belgium = Number(source * 2.1 + 20).toLocaleString()
+            var Bolivia = Number(source * 2.3 + 20).toLocaleString()
+            var Brazil = Number(source * 2.1 + 20).toLocaleString()
+            var Canada = Number(source * 2 + 20).toLocaleString()
+            var Chile = Number(source * 1.9 + 20).toLocaleString()
+            var package = Number(source).toLocaleString();
+            console.log(cost)
+            $('<tr id="tr-id">')
+                .append($('<td>').append(package))
+                .append($('<td>').append(Argentina))
+                .append($('<td>').append(Australia))
+                .append($('<td>').append(Austria))
+                .append($('<td>').append(Belgium))
+                .append($('<td>').append(Bolivia))
+                .append($('<td>').append(Brazil))
+                .append($('<td>').append(Canada))
+                .append($('<td>').append(Chile))
+                .appendTo('table tbody');
         }
     })
 </script>

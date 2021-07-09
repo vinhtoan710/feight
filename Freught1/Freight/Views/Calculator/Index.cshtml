@@ -2,7 +2,15 @@
 @{
     ViewBag.Title = "Caculator";
 }
+<style>
+    .form-control-lg {
+        width: 100%;
+    }
 
+    .form-control {
+        font-size: 1.5rem;
+    }
+</style>
 @section sidebar{
     <div class="nav-side-menu">
         <div class="brand">Dash board</div>
@@ -24,12 +32,13 @@
     </div>
 }
 
-<section class="container">
+
+<section class="container" style="font-size:1.5rem">
     <h3>Freight Rates Portal</h3>
     <div>
         <div class="row">
             <div class="col-xs-6 col-md-4" style="margin-top:15px;">
-                <select class="custom-select" id="sourceSelect">
+                <select class="form-select form-control-lg mb-5" id="sourceSelect">
                     <option selected>Source</option>
                     <option value="Singapore">Singapore</option>
                     <option value="Argentina">Argentina</option>
@@ -43,8 +52,8 @@
 
                 </select>
             </div>
-            <div class="col-xs-6 col-md-4" style="margin-top:15px;">
-                <select class="custom-select" id="destinationSelect">
+            <div class="col-xs-6 col-md-4" style="margin-top: 15px; ">
+                <select class="form-select form-control-lg mb-5" id="destinationSelect">
                     <option selected>Destination</option>
                     <option value="Singapore">Singapore</option>
                     <option value="Argentina">Argentina</option>
@@ -58,8 +67,8 @@
 
                 </select>
             </div>
-            <div class="col-xs-6 col-md-4" style="margin-top:15px;">
-                <select class="custom-select" id="carrierSelect">
+            <div class="col-xs-6 col-md-4" style="margin-top: 15px; ">
+                <select class="form-select form-control-lg mb-5" id="carrierSelect">
                     <option selected value="0">Carrier</option>
                     <option value="1">Fedex</option>
                     <option value="2">DHL</option>
@@ -76,47 +85,53 @@
                         <option value="3">3rd Party</option>
                     </select>
                 </div>*@
-            <div class="col-xs-6 col-md-4" style="margin-top:46px;">
-                <select class="custom-select" id="servicesSelect">
+            <div class="col-xs-6 col-md-4" style=" margin-top: 27.75px;">
+                <select class="form-select form-control-lg mb-5" id="servicesSelect">
                     <option selected>Services Type</option>
                 </select>
             </div>
-            <div class="col-xs-6 col-md-4" style="margin-top:46px;">
-                <select class="custom-select" id="packagingSelect">
+            <div class="col-xs-6 col-md-4" style=" margin-top: 27.75px;" >
+                <select class="form-select form-control-lg mb-5" id="packagingSelect">
                     <option selected value="0">Packaging Type</option>
 
                 </select>
             </div>
-            <div class="col-xs-6 col-md-4" style="margin-top:27px">
-                @*<select class="custom-select" id="weightSelect">
-                        <option selected>Weight</option>
-                    </select>*@
-                <label for="exampleInputEmail1">Weight</label>
-                <div class="input-group mb-3" style="width: 282px">
-                    <input type="text" id="weightSelect" placeholder="Weight" class="form-control" aria-label="Weight">
-                    <div class="input-group-append">
-                        <span class="input-group-text">Kg</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-            <!--<div class="col-xs-6 col-md-3" style="margin-top:15px;">-->
+            <div class="col-xs-6 col-md-4">
             @*<select class="custom-select" id="weightSelect">
                     <option selected>Weight</option>
                 </select>*@
-            <!--<div class="input-group mb-3">
-                    <input type="text" id="weightSelect" placeholder="Weight" class="form-control" aria-label="Weight">
-                    <div class="input-group-append">
-                        <span class="input-group-text">Kg</span>
-                    </div>
+            <label for="exampleInputEmail1">Weight</label>
+            <div class="input-group mb-3">
+                <input type="text" id="weightSelect" placeholder="Weight" class="form-control" aria-label="Weight">
+                <div class="input-group-append">
+                    <span class="input-group-text">Kg</span>
                 </div>
-            </div>-->
+            </div>
+        </div>
+        @*<div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">example.com</span>
+                </div>
+            </div>*@
+
+    </div>
+        <div class="row">
+            <!--<div class="col-xs-6 col-md-3" style="margin-top:15px;">-->
+            @*<select class="custom-select" id="weightSelect">
+            <option selected>Weight</option>
+        </select>*@
+            <!--<div class="input-group mb-3">
+            <input type="text" id="weightSelect" placeholder="Weight" class="form-control" aria-label="Weight">
+            <div class="input-group-append">
+                <span class="input-group-text">Kg</span>
+            </div>
+        </div>
+    </div>-->
             <div class="col-xs-6 col-md-4" style="margin-top:15px;" id="lengthGroup">
                 @*<select class="custom-select" id="weightSelect">
-                        <option selected>Weight</option>
-                    </select>*@
+                <option selected>Weight</option>
+            </select>*@
                 <label for="exampleInputEmail1">Length</label>
                 <div class="input-group mb-3" style="width: 282px">
 
@@ -127,12 +142,21 @@
                 </div>
 
             </div>
-            <div class="col-xs-6 col-md-4" style="margin-top:15px;" id="widthGroup">
-                @*<select class="custom-select" id="weightSelect">
-                        <option selected>Weight</option>
-                    </select>*@
-                <label for="exampleInputEmail1">Width</label>
-                <div class="input-group mb-3" style="width: 282px">
+            <!--<div class="col-xs-6 col-md-4" style="margin-top:15px;" id="widthGroup">-->
+            @*<select class="custom-select" id="weightSelect">
+            <option selected>Weight</option>
+        </select>*@
+            <!--<label for="exampleInputEmail1">Width</label>
+        <div class="input-group mb-3">
+            <input type="text" id="weightSelect" placeholder="Width" class="form-control" aria-label="Weight">
+            <div class="input-group-append">
+                <span class="input-group-text">CM</span>
+            </div>
+        </div>
+    </div>-->
+            <div class="col-xs-6 col-md-4" style="margin-top:15px" id="widthGroup">
+                <label style="font-size:13px" for="exampleInputEmail1">Width</label>
+                <div class="input-group-lg mb-lg-5, col-xl-12" style="margin-left:-15px; display:flex">
                     <input type="text" id="weightSelect" placeholder="Width" class="form-control" aria-label="Weight">
                     <div class="input-group-append">
                         <span class="input-group-text">CM</span>
@@ -141,8 +165,8 @@
             </div>
             <div class="col-xs-6 col-md-4" style="margin-top:15px;" id="heightGroup">
                 @*<select class="custom-select" id="weightSelect">
-                        <option selected>Weight</option>
-                    </select>*@
+                <option selected>Weight</option>
+            </select>*@
                 <label for="exampleInputEmail1">Height</label>
                 <div class="input-group mb-3" style="width: 282px">
 
@@ -154,44 +178,44 @@
             </div>
 
         </div>
+    @*<div class="row">
+            <div class="col-xs-6 col-md-3">
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>Weight</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>Lenght</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>Width</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>Height</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+        </div>*@
+    <div>
 
-        @*<div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Weight</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Lenght</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Width</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Height</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-            </div>*@
-        <div>
-            <button type="button" class="btn btn-primary" id="searchButton" style="margin-top:15px;">Search</button>
-        </div>
+        <button type="button" class="btn btn-primary" id="searchButton" style="margin-top:15px;width: 93px; height: 35px; font-size: 15px;">Search</button>
+    </div>
     </div>
     <div style="margin-top:50px">
         <h3>

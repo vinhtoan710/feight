@@ -8,8 +8,12 @@ html {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family:  sans-serif;
     height: 100vh;
+    font-size:1.5em;
+}
+.form-control {
+    font-size: 1.5rem;
 }
 
 a.submit {
@@ -24,6 +28,7 @@ a.submit {
     text-decoration: none;
     border-radius: 0.25rem;
     padding: 6px;
+    margin-top: 7px;
 }
 
 a {
