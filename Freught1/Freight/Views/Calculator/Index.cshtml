@@ -3,27 +3,53 @@
     ViewBag.Title = "Caculator";
 }
 <style>
+    .input-group-lg > .form-control:not(textarea), .input-group-lg > .custom-select {
+        font-size: 15px;
+    }
     .form-control-lg {
         width: 100%;
+        height :48px;
+        max-width:90%;
     }
-
+    .form-select {
+        height: 48px;
+        font-size: 15px;
+    }
     .form-control {
+
         font-size: 1.5rem;
     }
 
+    label {
+        font-size: 15px;
+        font-weight: normal;
+    }
+    h3 {
+        font-size: 20px;
+        font-family: Roboto,sans-serif;
+    }
     h4 {
         font-size: 13px;
-        font-weight: 700;
     }
+    .btn {
+        font-size:18px;
+        font-weight:500;
+        font-family: Roboto,sans-serif;
+    }
+
 </style>
 @section header{
-    <div class="row" style="background-color:#232f3e;height:70px;margin-top:-50px">
-        <a class="btn-danger btn-lg" style="margin-left:1300px;margin-bottom:80px;margin-top:20px" href="/Home/Index">Log out</a>
+    <div class="row" style="background-color: #2e353d; height: 70px; border-bottom: 1px solid black; top:0; width:103% ; position:fixed; z-index:1 ">
+        <div style="float:left">
+            <img src="https://ebiz5-staging.mentormedia.com/RFID-WIREFRAME/_nuxt/img/logo.9b9a022.png" id="icon" alt="User Icon" style="height: 65px; margin-left: 25px;" />
+        </div>
+        <div style="float: right; margin-left: 77%; margin-top: 20px ">
+            <a class="btn-danger btn-lg" style=" font-size: 14px; font-weight: 500; font-family: Roboto,sans-serif;" href="/Home/Index">Log out</a>
+        </div>
     </div>
 }
 @section sidebar{
     <div class="nav-side-menu">
-        <div class="brand">Dash board</div>
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
         <div class="menu-list">
@@ -42,13 +68,13 @@
 }
 
 
-<section class="container" style="font-size:1.5rem; margin-top:15px">
+<section class="container" style="font-size: 1.5rem; margin-top: 35px; display: inline-block;">
     <h3>Freight Rates Portal</h3>
     <div>
         <div class="row">
             <div class="col-xs-6 col-md-4" style="margin-top:15px;">
-                <h4>Source</h4>
-                <select class="form-select form-control-lg mb-5" id="sourceSelect">
+                <label>Source</label>
+                <select class="form-select form-control-lg mb-5" id="sourceSelect" style=" height: 48px;">
                     <option selected>Source</option>
                     <option value="Singapore">Singapore</option>
                     <option value="Argentina">Argentina</option>
@@ -64,8 +90,8 @@
             </div>
 
             <div class="col-xs-6 col-md-4" style="margin-top: 15px; ">
-                <h4>Destination</h4>
-                <select class="form-select form-control-lg mb-5" id="destinationSelect">
+                <label>Destination</label>
+                <select class="form-select form-control-lg mb-5" id="destinationSelect"style=" height: 48px;">
                     <option selected>Destination</option>
                     <option value="Singapore">Singapore</option>
                     <option value="Argentina">Argentina</option>
@@ -79,8 +105,8 @@
                 </select>
             </div>
             <div class="col-xs-6 col-md-4" style="margin-top: 15px; ">
-                <h4>Carrier</h4>
-                <select class="form-select form-control-lg mb-5" id="carrierSelect">
+                <label>Carrier</label>
+                <select class="form-select form-control-lg mb-5" id="carrierSelect"style=" height: 48px;">
                     <option selected value="0">Carrier</option>
                     <option value="1">Fedex</option>
                     <option value="2">DHL</option>
@@ -91,23 +117,23 @@
         <div class="row">
 
             <div class="col-xs-6 col-md-4">
-                <h4>Service type</h4>
-                <select class="form-select form-control-lg mb-5" id="servicesSelect">
+                <label>Service type</label>
+                <select class="form-select form-control-lg mb-5" id="servicesSelect"style=" height: 48px;">
                     <option selected>Services Type</option>
                 </select>
             </div>
 
             <div class="col-xs-6 col-md-4">
-                <h4>Packaging type</h4>
-                <select class="form-select form-control-lg mb-5" id="packagingSelect">
+                <label>Packaging type</label>
+                <select class="form-select form-control-lg mb-5" id="packagingSelect"style=" height: 48px;">
                     <option selected value="0">Packaging Type</option>
 
                 </select>
             </div>
             <div class="col-xs-6 col-md-4">
-                <label style="font-size:13px" for="exampleInputEmail1">Weight</label>
-                <div class="input-group-lg mb-lg-5, col-xl-11" style="margin-left:-15px; display:flex">
-                    <input type="text" id="weightSelect" placeholder="Weight" class="form-control" aria-label="Weight">
+                <label for="exampleInputEmail1">Weight</label>
+                <div class="input-group-lg mb-lg-5, col-xl-11" style="margin-left: -15px; display: flex; max-width: 310px">
+                    <input type="text" id="weightSelect" placeholder="Weight" class="form-control" aria-label="Weight"style="height: 48px;max-width:310px">
                     <div class="input-group-append">
                         <span class="input-group-text">Kg</span>
                     </div>
@@ -117,9 +143,9 @@
         <div class="row">
 
             <div class="col-xs-6 col-md-4" style="margin-top:15px;" id="lengthGroup">
-                <label style="font-size:13px" for="exampleInputEmail1">Length</label>
-                <div class="input-group-lg mb-lg-5, col-xl-11" style="margin-left:-15px; display:flex">
-                    <input type="text" id="weightSelect" placeholder="Length" class="form-control" aria-label="Weight">
+                <label  for="exampleInputEmail1">Length</label>
+                <div class="input-group-lg mb-lg-5, col-xl-11" style="margin-left: -15px; display: flex; max-width: 310px">
+                    <input type="text" id="weightSelect" placeholder="Length" class="form-control" aria-label="Weight" style="height: 48px; max-width: 310px">
                     <div class="input-group-append">
                         <span class="input-group-text">CM</span>
                     </div>
@@ -127,18 +153,18 @@
             </div>
 
             <div class="col-xs-6 col-md-4" style="margin-top:15px" id="widthGroup">
-                <label style="font-size:13px" for="exampleInputEmail1">Width</label>
-                <div class="input-group-lg mb-lg-5, col-xl-11" style="margin-left:-15px; display:flex">
-                    <input type="text" id="weightSelect" placeholder="Width" class="form-control" aria-label="Weight">
+                <label  for="exampleInputEmail1">Width</label>
+                <div class="input-group-lg mb-lg-5, col-xl-11" style="margin-left: -15px; display: flex; max-width: 310px" >
+                    <input type="text" id="weightSelect" placeholder="Width" class="form-control" aria-label="Weight"style="height: 48px;">
                     <div class="input-group-append">
                         <span class="input-group-text">CM</span>
                     </div>
                 </div>
             </div>
             <div class="col-xs-6 col-md-4" style="margin-top:15px;" id="heightGroup">
-                <label style="font-size:13px" for="exampleInputEmail1">Height</label>
-                <div class="input-group-lg mb-lg-5, col-xl-11" style="margin-left:-15px; display:flex">
-                    <input type="text" id="weightSelect" placeholder="Height" class="form-control" aria-label="Weight">
+                <label  for="exampleInputEmail1">Height</label>
+                <div class="input-group-lg mb-lg-5, col-xl-11" style="margin-left: -15px; display: flex; max-width: 310px">
+                    <input type="text" id="weightSelect" placeholder="Height" class="form-control" aria-label="Weight" style="height: 48px; max-width: 310px">
                     <div class="input-group-append">
                         <span class="input-group-text">CM</span>
                     </div>
@@ -148,7 +174,7 @@
         </div>
 
         <div style="margin-top:20px">
-            <button type="button" class="btn btn-primary btn-lg" id="searchButton">Search</button>
+            <button type="button" style="background: #008aab; " class="btn btn-primary btn-lg" id="searchButton">Search</button>
         </div>
     </div>
     <div style="margin-top:50px">
@@ -171,8 +197,17 @@
             </tbody>
         </table>
     </div>
-    <a href='/shipping-cost1.xlsx' target='_blank'>Export</a>
+    @*<a href='/shipping-cost1.xlsx'
+           id="export"
+           style="color: white; height: 36px; border: solid 1px #008aab; background: #008aab; -webkit-appearance: button; -moz-appearance: button; appearance: button; text-decoration: none; border-radius: 0.25rem; padding: 6px; margin-top: 7px;"
+           target='_blank'>
+                Export
+        </a>*@
+    <a href="/shipping-cost1.xlsx" class="btn btn-info"  style="background: #008aab; "  role="button">Export</a>
 </section>
+<footer style=" font-size:15px; color: black; margin: 0em 0em 0em 0em; padding: 0.75em 0.75em; bottom:0;  font-weight:normal">
+    <label>Copyright Mentor Media, 2020</label>
+</footer>
 <script src="~/Scripts/jquery-3.4.1.js"></script>
 <script>
     $(document).ready(function () {
@@ -361,6 +396,9 @@
             $(contentToRemove).remove();
             if (source == "Source" || desination == "Destination") {
                 alert('Source or destination are empty');
+            }
+            if (weightSelect == "") {
+                alert('Weight is empty');
             }
             else {
                 //var month = [2, 3, 6, 5, 4];
