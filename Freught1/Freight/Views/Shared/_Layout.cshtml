@@ -7,6 +7,7 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Style/sidebar.css" rel="stylesheet" />
+    <link href="~/Style/navbar.css" rel="stylesheet" />
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -23,18 +24,16 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div>
-        @RenderSection("header", required: false)
-    </div>
-   
+
+    @RenderSection("header", required: false)
+
+
     <div class="row">
         <div class="col-2">
             @RenderSection("sidebar", required: false)
         </div>
-        <div class="col-10" >
-            <div class="container body-content" style="margin-left:9%">
-                @RenderBody()
-            </div>
+        <div class="col-10" style="font-size: 1.5rem; margin-top: 5%; justify-content: center; width: 1600px">
+            @RenderBody()
         </div>
     </div>
 
