@@ -44,14 +44,20 @@
 
         <div class="menu-list">
 
-            <ul id="menu-content" class="menu-content collapse out">
-                <li data-toggle="collapse" data-target="#products" class="collapsed active">
-                    <a href="/Calculator/Index"><i class="fa fa-dashboard fa-lg"></i> Calculator </a>
-                </li>
+            <ul id="menu-content" class="menu-content collapse out" >
+                <a href="/Calculator/Index">
+                    <li data-toggle="collapse" data-target="#products" class="collapsed active" >
+                        <i class="fa fa-dashboard fa-lg" style="padding-right:10px"></i>
+                        Calculator
+                    </li>
 
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
-                    <a href="/UploadRate/Index"><i class="fa fa-car fa-lg"></i> Upload rate</span></a>
-                </li>
+                </a>
+                <a href="/UploadRate/Index">
+                    <li data-toggle="collapse" data-target="#new" class="collapsed">
+                        <i class="fa fa-car fa-lg" style="padding-right:8px"></i>
+                        Upload rate
+                    </li>
+                </a>
             </ul>
         </div>
     </div>
@@ -187,13 +193,8 @@
                     </tbody>
                 </table>
             </div>
-            @*<a href='/shipping-cost1.xlsx'
-                   id="export"
-                   style="color: white; height: 36px; border: solid 1px #008aab; background: #008aab; -webkit-appearance: button; -moz-appearance: button; appearance: button; text-decoration: none; border-radius: 0.25rem; padding: 6px; margin-top: 7px;"
-                   target='_blank'>
-                        Export
-                </a>*@
-            <button href="/shipping-cost1.xlsx" class="btn btn-primary btn-lg" role="button" type="button">Export</button>
+           
+            <button onclick="location.href='/shipping-cost1.xlsx'" class="btn btn-primary btn-lg" role="button" type="button">Export</button>
         </section>
         <footer style=" position:absolute;top:100%; font-size:15px;margin-top:10px;">
             <label style="font-weight: normal">Copyright Mentor Media, 2020</label>
@@ -223,6 +224,8 @@
                 $("#servicesSelect").html(servicesForFedex);
             if (value == '2')
                 $("#servicesSelect").html(servicesForDHL);
+            if (value == '0')
+                $("#servicesSelect").html(serviceOptionDefault);
 
         });
         // Event when choose services type
@@ -252,6 +255,13 @@
 
             var packagingValue = $(this).val();
             var weightElement = $("#weightSelect");
+     
+            if (packagingValue == '0' || packagingValue == '5') {
+                $('#heightGroup').attr('hidden', false);
+                $('#widthGroup').attr('hidden', false);
+                $('#lengthGroup').attr('hidden', false);
+                weightElement.html(option1);
+            }
             if (packagingValue == '1' || packagingValue == '5') {
                 $('#heightGroup').attr('hidden', true);
                 $('#widthGroup').attr('hidden', true);
@@ -273,12 +283,7 @@
                 weightElement.html(option3);
             }
 
-            if (packagingValue == '4') {
-                $('#heightGroup').attr('hidden', false);
-                $('#widthGroup').attr('hidden', false);
-                $('#lengthGroup').attr('hidden', false);
-                weightElement.html(option4);
-            }
+         
 
 
         })
@@ -387,11 +392,8 @@
             }
             var contentToRemove = document.querySelectorAll("#tr-id");
             $(contentToRemove).remove();
-            if (source == "Source" || desination == "Destination") {
-                alert('Source or destination are empty');
-            }
-            if (weightSelect == "") {
-                alert('Weight is empty');
+            if (source == "Source" || desination == "Destination" || weightSelect == "") {
+                alert('Source, destination, weight are not empty');
             }
             else {
                 //var month = [2, 3, 6, 5, 4];
