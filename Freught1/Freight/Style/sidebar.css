@@ -34,6 +34,7 @@
         line-height: 35px;
         cursor: pointer;
         height: 48px;
+
         .collapsed
 
 {
@@ -63,6 +64,7 @@
     padding-right: 10px;
     vertical-align: middle;
     float: right;
+
 }
 
 .nav-side-menu ul .active,
@@ -71,6 +73,7 @@
     background-color: #4f5b69;
     height: 48px;
     color: #e1ffff;
+   
   
 }
 
@@ -96,6 +99,7 @@
     .nav-side-menu ul .sub-menu li:hover,
     .nav-side-menu li .sub-menu li:hover {
         background-color: #020203;
+        
     }
 
     .nav-side-menu ul .sub-menu li:before,
@@ -115,20 +119,21 @@
     color: #e1ffff;
     margin-left: 2px;
     padding-left:10px;
-    padding-top:5px
+    padding-top:5px;
+   
 }
 
     .nav-side-menu li a {
         text-decoration: none;
         color: #e1ffff;
-       
+        
     }
 
         .nav-side-menu li a i {
             padding-left: 10px;
             width: 20px;
             padding-right: 20px;
-
+            
         }
 
     .nav-side-menu li:hover {
@@ -139,6 +144,7 @@
         -o-transition: all 1s ease;
         -ms-transition: all 1s ease;
         transition: all 1s ease;
+
     }
 
 @media (max-width: 767px) {
@@ -205,6 +211,7 @@ body {
     .nav-side-menu ul .sub-menu li .sub-line li:hover,
     .nav-side-menu li .sub-menu li .sub-line li:hover {
         background-color: #020203;
+      
     }
 
     .nav-side-menu ul .sub-menu li .sub-line li:before,
@@ -242,6 +249,7 @@ body {
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
+
 }
 
 @media (max-width: 767px) {
@@ -287,6 +295,7 @@ body {
         .sub-line ul .sub-press li:hover,
         .sub-line li .sub-press li:hover {
             background-color: #020203;
+
         }
 
         .sub-line ul .sub-press li:before,
