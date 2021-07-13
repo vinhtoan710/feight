@@ -274,6 +274,7 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Calculator\Index.cshtml" />
     <Content Include="Views\UploadRate\Index.cshtml" />
+    <Content Include="Views\_Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
